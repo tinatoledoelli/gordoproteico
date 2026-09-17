@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para mi gordo proteico ❤️</title>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(135deg,#ffd6e7,#ffeef5);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+    .card{
+      background:white;
+      padding:30px;
+      border-radius:25px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.15);
+      max-width:350px;
+    }
+    h1{color:#ff4d88;}
+    .gif{
+      font-size:80px;
+      animation:flotar 2s infinite ease-in-out;
+    }
+    @keyframes flotar{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+    }
+    button{
+      border:none;
+      padding:12px 22px;
+      border-radius:30px;
+      font-size:18px;
+      cursor:pointer;
+      margin:10px;
+      transition:.3s;
+    }
+    #si{background:#ff4d88;color:white;}
+    #no{background:#ddd;}
+    #segunda{display:none;}
+    .beso{animation:besar 1s infinite;}
+    @keyframes besar{
+      50%{transform:scale(1.2)}
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="primera">
+  <div class="gif">😴💤</div>
+  <h1>¿Querés venir a dormir conmigo?</h1>
+  <h2>Gordo proteico ❤️</h2>
+
+  <button id="si">Sí 💕</button>
+  <button id="no">No 🙈</button>
+</div>
+
+<div class="card" id="segunda">
+  <div class="gif beso">😘💋</div>
+  <h1>¡Confírmame el horario, gordo lindo!</h1>
+  <p>Te espero para mimir ❤️</p>
+</div>
+
+<script>
+  const si = document.getElementById('si');
+  const no = document.getElementById('no');
+  const primera = document.getElementById('primera');
+  const segunda = document.getElementById('segunda');
+
+  let escala = 1;
+
+  si.onclick = () => {
+    primera.style.display = 'none';
+    segunda.style.display = 'block';
+  }
+
+  no.onclick = () => {
+    escala += 0.3;
+    no.style.transform = `scale(${escala})`;
+    no.innerText = '¿Seguro? 😅';
+  }
+</script>
+
+</body>
+</html>
